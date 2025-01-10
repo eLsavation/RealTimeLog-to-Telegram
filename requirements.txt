@@ -1,5 +1,3 @@
-time
-re
 requests
 Observer
 FileSystemEventHandler
