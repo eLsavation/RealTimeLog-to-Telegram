@@ -13,7 +13,7 @@ This project monitors a log file in real-time and sends specified content to a T
 ---
 
 ## ✅ Prerequisites
-- 🐍 Python 3.7+
+- 🐍 Python 3
 - Telegram Bot Token ([Create a Telegram Bot](https://core.telegram.org/bots#botfather))
 - Chat ID of the recipient ([Find your Chat ID](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id))
 
@@ -23,8 +23,8 @@ This project monitors a log file in real-time and sends specified content to a T
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/real-time-log-to-telegram.git
-   cd real-time-log-to-telegram
+   git clone https://github.com/your-username/RealTimeLog-to-Telegram.git
+   cd RealTimeLog-to-Telegram
    ```
 
 2. **Install Dependencies**
@@ -82,12 +82,12 @@ The script will:
 
 ### Input Log
 ```
-[✓] Account: hitmeup.awwal@gmail.com
+[✓] Account: email@gmail.com
 [✓] Points: 15215
 [✓] Social: 3/3 verified
 [✓] Keepalive: Active
-[✓] Proxy: http://103.127.98.68:3128
-[✓] App ID: 6769d3d108a9d4c75882ecd5
+[✓] Proxy: protocol://ip:port
+[✓] App ID: 6769d3d1asfa9d4c75882ecd5
 ```
 
 ### Config
@@ -102,12 +102,12 @@ CONFIG = {
 ### Telegram Output
 ```
 [Process Summary]
-[✓] Account: hitmeup.awwal@gmail.com
+[✓] Account: email@gmail.com
 [✓] Points: 15215
 [✓] Social: 3/3 verified
 [✓] Keepalive: Active
-[✓] Proxy: http://103.127.98.68:3128
-[✓] App ID: 6769d3d108a9d4c75882ecd5
+[✓] Proxy: protocol://ip:port
+[✓] App ID: 6769d3d1asfa9d4c75882ecd5
 ```
 
 ---
@@ -118,6 +118,3 @@ Feel free to submit issues or pull requests if you find bugs or have feature sug
 
 ---
 
-## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
