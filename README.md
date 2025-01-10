@@ -31,9 +31,9 @@ This project monitors a log file in real-time and sends specified content to a T
    ```bash
    pip install -r requirements.txt
    ```
-3. **Running Bot with log**
+3. **Running Project with log**
    ```bash
-   python3 bot.py | tee output.log
+   python3 airdrop.py | tee output.log
    ```
 
 
