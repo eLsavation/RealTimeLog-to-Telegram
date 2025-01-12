@@ -40,7 +40,7 @@ class LogFileHandler(FileSystemEventHandler):
     def __init__(self, file_path):
         self.file_path = file_path
         self.last_position = 0
-        self.last_sent_log = None
+        self.buffer = []
 
     def on_modified(self, event):
         if event.src_path == self.file_path:
@@ -51,21 +51,15 @@ class LogFileHandler(FileSystemEventHandler):
 
                 for line in lines:
                     if CONFIG["keyword_from"] in line:
-                        content_lines = []
-                        content_lines.append(line.strip())
-
-                        # Read subsequent lines until keyword_end is found
-                        for subsequent_line in lines[lines.index(line) + 1:]:
-                            content_lines.append(subsequent_line.strip())
-                            if CONFIG["keyword_end"] in subsequent_line:
-                                break
-
-                        content = "\n".join(content_lines)
-
-                        # Check if the content is the same as the last sent log
-                        if content != self.last_sent_log:
+                        # Mulai menyimpan log dari keyword `from`
+                        self.buffer = [line.strip()]
+                    elif self.buffer:
+                        self.buffer.append(line.strip())
+                        if CONFIG["keyword_end"] in line:
+                            # Jika keyword `end` ditemukan, kirim log
+                            content = "\n".join(self.buffer)
                             send_telegram_message(CONFIG["title"], content)
-                            self.last_sent_log = content
+                            self.buffer = []
 
 # Inisialisasi dan mulai observer
 if __name__ == "__main__":
